@@ -1,0 +1,48 @@
+  - title: Upstairs
+    path: upstairs
+    icon: 'hass:stairs-up'
+    badges: []
+    cards:
+      - type: grid
+        title: Upstairs Lights
+        columns: 3
+        cards:
+          - type: light
+            entity: light.masters_bedroom_lamp
+            name: Master Lamp
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.master_fan
+            name: Master Light
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.guest_fan
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.office
+            name: Office Lamp
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.office_fan
+            name: Office Light
+      - type: entities
+        title: Upstairs Fans
+        show_header_toggle: false
+        reverseButtons: true
+        entities:
+          - entity: fan.master_fan
+            type: 'custom:fan-control-entity-row'
+            name: Master Fan Settings
+            customTheme: true
+          - entity: fan.guest_fan
+            type: 'custom:fan-control-entity-row'
+            name: Guest Fan Settings
+            customTheme: true
+          - entity: fan.office_fan
+            type: 'custom:fan-control-entity-row'
+            name: Office Fan Settings
+            customTheme: true
